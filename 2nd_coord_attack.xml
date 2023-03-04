@@ -951,30 +951,6 @@ system global_clock, cids, engineer, sup, engine0, ids0, ctrl0, actuator0, senso
 </system>
 	<queries>
 		<query>
-			<formula>simulate [&lt;=3000] {temp[0],temp[1],temp[2]}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=600] {speed[0],speed[1],speed[2]}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=300] {alarm,ok,warning}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=300] {ctrl_status[0], ctrl_status[1], ctrl_status[2]}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=500] {ctrl0.attack, ctrl1.attack, ctrl2.attack}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=350] {instr[0],instr[1],instr[2]}</formula>
-			<comment></comment>
-		</query>
-		<query>
 			<formula>Pr[&lt;=10000](&lt;&gt; time &gt;= start+150 &amp;&amp; time &lt;= start+9000 &amp;&amp; exists(i:id_t) speed[i]!=FULL)</formula>
 			<comment></comment>
 		</query>
@@ -1003,7 +979,7 @@ system global_clock, cids, engineer, sup, engine0, ids0, ctrl0, actuator0, senso
 			<comment></comment>
 		</query>
 		<query>
-			<formula>E[&lt;=10000;200](max: total_temp[1]/10000)</formula>
+			<formula>E[&lt;=10000;2000](max: total_temp[1]/10000)</formula>
 			<comment></comment>
 		</query>
 		<query>
